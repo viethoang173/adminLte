@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreign('status_id')->references('id')->on('project_statuses');
             $table->string('client_company');
             $table->string('leader');
+            $table->boolean('active')->default('1');
             $table->timestamps();
         });
     }

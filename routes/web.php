@@ -24,5 +24,6 @@ Route::prefix('admin/project')->group(function () {
     Route::get('/detail', [\App\Http\Controllers\ProjectController::class, 'pageDetail']);
     Route::get('/edit/{id}', [\App\Http\Controllers\ProjectController::class, 'pageEdit']);
     Route::post('/edit/{id}', [\App\Http\Controllers\ProjectController::class, 'Edit']);
+    Route::post('/delete/{id}', [\App\Http\Controllers\ProjectController::class, 'Delete']);
 
 });

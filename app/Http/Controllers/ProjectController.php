@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ProjectController extends Controller
 {
     public function index(){
-        $listProject = projects::all();
+        $listProject = projects::all()->where('active','=','1');
         $listStatus = project_status::all();
         return view('Admin.project.index', compact('listProject','listStatus'));
     }
@@ -52,5 +52,10 @@ class ProjectController extends Controller
         return redirect('/admin/project');
     }
 
-
+    public function Delete(Request $request, $active){
+        $projects = projects::find($active);
+        $projects->active = $request->get('active','0');
+        $projects->save();
+        return redirect('/admin/project');
+    }
 }

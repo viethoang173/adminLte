@@ -78,10 +78,11 @@
                         </tr>
                         </thead>
                         <tbody>
+                        <?php $i=1;?>
                             @foreach($listProject as $project)
                                 <tr>
-                                    <td>
-                                        {{$project->id}}
+                                    <td class="text-center">
+                                        {{$i++}}
                                     </td>
                                     <td>
                                         <div>{{$project->name}}</div>
@@ -112,11 +113,13 @@
                                             </i>
                                             Edit
                                         </a>
-                                        <a class="btn btn-danger btn-sm" href="#">
-                                            <i class="fas fa-trash">
-                                            </i>
-                                            Delete
-                                        </a>
+
+                                            <form method="post" onsubmit="return confirm('Are you sure?')" action="/admin/project/delete/{{$project->id}}" >
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger btn-sm" href="#">
+                                                    <i class="fas fa-trash"></i>Delete
+                                                </button>
+                                            </form>
                                     </td>
                                 </tr>
                             @endforeach

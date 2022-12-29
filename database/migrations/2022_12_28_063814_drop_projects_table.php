@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('projects');
         Schema::dropIfExists('project_statuses');
+        Schema::dropIfExists('projects');
+
     }
 
     /**
