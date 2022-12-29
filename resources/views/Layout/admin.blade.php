@@ -275,14 +275,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="kanban.html" class="nav-link">
-                            <i class="nav-icon fas fa-columns"></i>
-                            <p>
-                                Kanban Board
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon far fa-envelope"></i>
                             <p>
@@ -312,6 +304,12 @@
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a href="/admin/project" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Projects</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-book"></i>
                             <p>
@@ -338,30 +336,7 @@
                                     <p>E-commerce</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="/admin/project" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Projects</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/admin/project/add" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Project Add</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/admin/project/edit" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Project Edit</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/admin/project/detail" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Project Detail</p>
-                                </a>
-                            </li>
+
                             <li class="nav-item">
                                 <a href="page/contacts.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
