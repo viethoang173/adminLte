@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="breadcrumb float-sm-right">
-                            <a href="/admin/project/add">Project Add</a>
+                            <a class="btn btn-danger" href="/admin/project/add">Project Add</a>
                         </div>
                     </div>
                 </div>

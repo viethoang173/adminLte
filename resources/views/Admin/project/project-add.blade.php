@@ -60,8 +60,8 @@
                         <div class="form-group">
                             <label for="inputStatus">Status</label>
                             <select id="inputStatus" name="inputStatus" class="form-control custom-select">
-                                @foreach ($status as $status)
-                                    <option value="{{ $status->id }}">{{ $status->name }}</option>
+                                @foreach ($status as $item)
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
                                 @endforeach
                             </select>
                         </div>

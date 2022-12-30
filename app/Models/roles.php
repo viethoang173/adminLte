@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class projects extends Model
+class roles extends Model
 {
     use HasFactory;
 
-    public function project_status()
-    {
-        return $this->belongsTo(project_status::class, 'status_id', 'id');
+    public function accounts() {
+        return $this->hasMany(accounts::class, 'roles_id', 'id');
     }
 }

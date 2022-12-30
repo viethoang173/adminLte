@@ -61,7 +61,12 @@
                             <label for="inputStatus">Status</label>
                             <select id="inputStatus" name="inputStatus" class="form-control custom-select">
                                 @foreach ($listStatus as $status)
-                                    <option value="{{ $status->id}}">{{ $status->name }}</option>
+                                    @if ($status->id === $projects->status_id)
+                                        <option value="{{ $status->id}}" selected>{{ $status->name }}</option>
+                                    @else
+                                        <option value="{{ $status->id}}">{{ $status->name }}</option>
+                                    @endif
+{{--                                    <option value="{{ $status->id}}" {{($status->id === $projects->status_id)?'selected':''}}>{{ $status->name }}</option>--}}
                                 @endforeach
                             </select>
                         </div>
@@ -98,6 +103,4 @@
     <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('dist/js/demo.js')}}"></script>
-    {{--    //validate--}}
-
 @endsection

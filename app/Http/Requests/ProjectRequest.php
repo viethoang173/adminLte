@@ -24,16 +24,23 @@ class ProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'content' => 'required'
+            'inputName' => ['required', 'string'],
+            'inputDescription' => ['required'],
+            'inputStatus' => 'required',
+            'inputClientCompany' => ['required'],
+            'inputProjectLeader' => ['required', 'string'],
+            'inputDescription' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'title.required'=>'Nhập vào đây này?',
-            'content.required'=>'Nhập vào kia kìa?',
+            'inputName.required'=>'Vui lòng nhập đầy đủ thông tin!',
+            'inputDescription.required'=>'Vui lòng nhập đầy đủ thông tin!',
+            'inputStatus.required'=>'Vui lòng nhập đầy đủ thông tin!',
+            'inputClientCompany.required'=>'Vui lòng nhập đầy đủ thông tin!',
+            'inputProjectLeader.required'=>'Vui lòng nhập đầy đủ thông tin!',
         ];
     }
 

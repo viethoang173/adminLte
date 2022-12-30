@@ -306,6 +306,12 @@
                     <li class="nav-item">
                         <a href="/admin/project" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
+                            <p>Accounts</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/project" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
                             <p>Projects</p>
                         </a>
                     </li>
