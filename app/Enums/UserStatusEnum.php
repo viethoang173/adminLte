@@ -10,3 +10,4 @@ final class UserStatusEnum extends Enum
     const ACTIVE = 'ACTIVE';
     const PENDING = 'PENDING';
 }
+

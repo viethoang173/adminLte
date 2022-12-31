@@ -38,6 +38,7 @@ class AccountTableSeeder extends Seeder
                 'email' => 	$fake->unique->email,
                 'phone' => $fake->numerify($string = '#############'),
                 'address' => $fake->city,
+                'avatar' => $fake->imageUrl('400','400'),
                 'roles_id' => $fake->numberBetween($min = 1, $max = 2),
                 'status' => $status[$mua],
                 'password' => $fake->word

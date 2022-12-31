@@ -27,6 +27,16 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="breadcrumb float-sm-right">
+                            <form method="get" action="{{route('project.search')}}" class="form-inline" style="margin-right: 30px;">
+                                <div class="input-group">
+                                    <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-sidebar" style="border: 1px solid #ced4da">
+                                            <i class="fas fa-search fa-fw"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
                             <a class="btn btn-danger" href="/admin/project/add">Project Add</a>
                         </div>
                     </div>

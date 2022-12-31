@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,16 +16,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('admin')->group(function () {
-    Route::get('/', [\App\Http\Controllers\AdminController::class, 'index']);
+    Route::get('/', [AdminController::class, 'index']);
+
+    Route::get('/profile', [AdminController::class, 'proFile'])->name('profile');
 });
 
 Route::prefix('admin/project')->group(function () {
-    Route::get('', [\App\Http\Controllers\ProjectController::class, 'index']);
-    Route::get('/add', [\App\Http\Controllers\ProjectController::class, 'pageAdd']);
-    Route::post('/store', [\App\Http\Controllers\ProjectController::class, 'Add']);
-    Route::get('/detail', [\App\Http\Controllers\ProjectController::class, 'pageDetail']);
-    Route::get('/edit/{id}', [\App\Http\Controllers\ProjectController::class, 'pageEdit']);
-    Route::post('/edit/{id}', [\App\Http\Controllers\ProjectController::class, 'Edit']);
-    Route::post('/delete/{id}', [\App\Http\Controllers\ProjectController::class, 'Delete']);
-
+    Route::get('', [ProjectController::class, 'index']);
+    Route::get('/{search}', [ProjectController::class, 'search'])->name('project.search');
+    Route::get('/add', [ProjectController::class, 'pageAdd']);
+    Route::post('/store', [ProjectController::class, 'Add']);
+    Route::get('/detail', [ProjectController::class, 'pageDetail']);
+    Route::get('/edit/{id}', [ProjectController::class, 'pageEdit']);
+    Route::post('/edit/{id}', [ProjectController::class, 'Edit']);
+    Route::post('/delete/{id}', [ProjectController::class, 'Delete']);
 });

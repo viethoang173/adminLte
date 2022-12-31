@@ -59,4 +59,18 @@ class ProjectController extends Controller
         $projects->save();
         return redirect('/admin/project');
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $info = projects::select("name", "description", "client_company", "leader")
+            ->where(function ($q) use ($search) {
+                $q->orWhere('name', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%")
+                    ->orWhere('client_company', 'like', "%{$search}%")
+                    ->orWhere('leader', 'like', "%{$search}%");
+            })
+            ->get();
+        return view('Admin.project.index')->with('info');
+    }
 }

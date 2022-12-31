@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Faker\Factory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class ProjetStatusTableSeeder extends Seeder
 {
@@ -17,11 +17,17 @@ class ProjetStatusTableSeeder extends Seeder
     public function run()
     {
         $fake = Factory::create();
-        $limit = 10;
+        $limit = 3;
+
+        $reflector = new \ReflectionClass('App\Enums\ProjectStatusEnum');
+        foreach ($reflector->getConstants() as $constValue){
+            $sta[] = $constValue;
+        }
 
         for ($i = 1; $i < $limit; $i++) {
+            $ran = rand(0,count($sta)-1);
             DB::table('project_statuses')->insert([
-                'name' => $fake->name
+                'name' => $sta[$ran]
             ]);
         }
     }
